@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgeWise Connect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-image: url('./assets/image.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* This makes it scroll continuously */
+    }
+  </style>
+</head>
+<body class="antialiased" data-auth="pending">
+
+  <!-- Header -->
+  <header class="bg-white border-b">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <!-- Left section: Logo + Translate -->
+      <div class="flex items-center space-x-4">
+        <a href="index.html" class="text-4xl font-extrabold text-blue-600">AgeWise</a>
+        <div id="translate-wrapper">
+          <div id="translate-btn" title="Translate">
+            <img src="https://cdn-icons-png.flaticon.com/512/4534/4534766.png" alt="Translate" style="width: 28px; height: 28px;" />
+          </div>
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+      <!-- Right section: Navigation + Login -->
+      <nav class="hidden md:flex space-x-6" id="main-nav">
+        <a href="index.html" id="nav-home" class="font-semibold text-blue-600">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="wellness.html">Wellness</a>
+        <a href="community.html">Community</a>
+        <!-- This link is dynamically swapped to avatar once logged in -->
+        <a href="login.html" id="nav-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <!-- News Section & Main Buttons -->
+  <section id="news-section" class="container mx-auto text-center py-16">
+    <h1 class="text-4xl font-bold mt-1">Welcome to AgeWise Connect</h1>
+    <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
+      <a href="resources.html" class="bg-blue-500 text-white text-xl font-bold px-6 py-4 rounded-lg hover:bg-blue-600">Explore Resources</a>
+      <a href="tutorials.html" class="bg-blue-500 text-white text-xl font-bold px-6 py-4 rounded-lg hover:bg-blue-600">Explore Tutorials</a>
+      <a href="reminders.html" class="bg-blue-500 text-white text-xl font-bold px-6 py-4 rounded-lg hover:bg-blue-600">Set Medicine Reminders</a>
+      <a href="wellness.html" class="bg-blue-500 text-white text-xl font-bold px-6 py-4 rounded-lg hover:bg-blue-600">Explore Wellness</a>
+      <a href="community.html" class="bg-blue-500 text-white text-xl font-bold px-6 py-4 rounded-lg hover:bg-blue-600">Get Emotional Support</a>
+    </div>
+    <br><br>
+    <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 text-left text-gray-700 min-h-[150px]">
+      <div class="col-span-full w-full flex justify-center items-center">
+        <p class="text-gray-500 italic">Loading news...</p>
+      </div>
+    </div>
+    <div class="mt-8">
+      <button id="more-news-btn" class="bg-gray-300 text-black font-semibold px-6 py-3 rounded hover:bg-gray-400">
+        More News
+      </button>
+    </div>    
+  </section>
+  <script src="news.js"></script>
+
+
+
+  <!-- Floating Voice Button -->
+  <button id="voice-btn"
+          class="fancy-hover fixed bottom-6 right-6 bg-green-500 text-white text-3xl w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 focus:outline-none z-50"
+          title="Activate Voice Assistant">
+    🎤
+  </button>
+  <p id="voice-result"
+     class="fixed bottom-24 right-6 bg-white text-gray-700 text-sm p-2 rounded shadow z-40 hidden"></p>
+
+
+
+
+  <!-- Floating Chatbot Toggle Button (bottom‑right) -->
+  <button id="chat-toggle"
+          class="fancy-hover fixed bottom-6 right-24 bg-blue-600 text-white text-2xl w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 focus:outline-none transition z-50">
+    💬
+  </button>
+  <!-- Chat Widget (expands from bottom-left) -->
+   <!-- Chat Widget (expands from bottom-left) -->
+  <div id="chat-widget"
+    class="fixed bottom-6 left-6 mt-2 w-80 bg-white shadow-xl rounded-lg overflow-hidden text-sm transition-all duration-300 transform scale-0 opacity-0 origin-bottom-left z-50">
+    <div class="bg-blue-600 text-white p-3 font-bold">💬 AgeWise Assistant</div>
+      <div id="chat-messages" class="p-3 h-60 overflow-y-auto text-gray-700 bg-gray-50"></div>
+        <form id="chat-form" class="flex border-t">
+          <input type="text" id="chat-input" placeholder="Ask me anything..." class="flex-grow p-2 outline-none" />
+          <button type="submit" class="bg-blue-600 text-white px-4">Send</button>
+        </form>
+  </div>
+  
+  
+
+
+  <!-- Zoom Button -->
+  <button id="zoom-toggle" class="fancy-hover fixed bottom-6 right-[170px] text-3xl w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center shadow-md">
+    🔍
+  </button>
+  <!-- Zoom Popup -->
+  <div id="zoom-popup" class="fixed bottom-20 right-[170px] bg-gray-50 rounded-xl shadow-lg p-3 hidden flex gap-3 items-center">
+    <button id="zoom-out" class="fancy-hover text-2xl px-3 py-1 bg-gray-200 rounded-full">−</button>
+    <button id="zoom-in" class="fancy-hover text-2xl px-3 py-1 bg-gray-200 rounded-full">+</button>
+  </div>
+
+
+
+
+
+  <!-- Footer/About Section -->
+  <footer class="container mx-auto text-center py-16">
+    <h2 class="text-2xl font-bold mb-4">About AgeWise</h2>
+    <p class="mt-4 text-gray-600">
+      At Agewise, we bridge the digital gap for senior citizens by providing a
+      secure, intuitive, and efficient platform that enhances their independence and quality of life.
+      By fostering greater self-reliance and confidence in using technology, AgeWise
+      empowers seniors to stay informed, connected, and engaged with the digital world.
+    </p>
+  </footer>
+
+
+
+  <!-- Firebase Auth Setup & Nav Behavior -->
+  <script type="module" src="auth.js"></script>
+  <!-- Gemini Chat Logic -->
+  <script type="module" src="gemini.js"></script>
+  <!-- Zoom functionality load -->
+  <script src="zoom.js"></script>
+  <script src="translate.js"></script>
+</body>
+</html>
