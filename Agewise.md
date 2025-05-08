@@ -189,10 +189,11 @@ Project/
 ## Documentation
 
 This repository includes:
-* Codebase
+* Codebase (Project directory)
 * Software Requirements Specification (SRS)
-* Software Requirements Document (SRD)
+* Software Requirements Document (SDD)
 * Test Documentation
+* Problem statement
 
 ---
 
