@@ -20,7 +20,7 @@ AgeWise promotes digital inclusion and independence for older adults, enabling t
 
 ---
 
-## Teammates / Contributors
+## Teammates
 
 | Name         | Ids         | Email                                |
 |:-------------|:------------|:-------------------------------------|
@@ -72,7 +72,6 @@ Ensure the following tools are installed:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/AgeWise.git
 cd AgeWise/Project
 ```
 
