@@ -10,11 +10,13 @@ AgeWise is a socially impactful, web-based platform tailored to empower senior c
 
 ### Key Features
 
+* **ChatBot Implementation: Interact with chatbot via text or voice, helps navigating website and communicates with natural human voice.
 * **Government Services Access**: Easy-to-use links and guides to access central and state government schemes and digital portals.
 * **Smart Reminders**: Users can set medication, appointment, or activity reminders via text or voice in a familiar chat-like layout.
 * **Digital Literacy**: Access to tutorials and resources to develop digital skills for everyday online activities.
 * **Voice-Enabled Navigation**: Speech recognition integration allows hands-free access and interaction with the platform.
 * **Secure Authentication**: Google Sign-In (OAuth 2.0) for fast and secure user authentication.
+* **Empathetic Community: Get emotional support during your hardships via call or text. 
 
 AgeWise promotes digital inclusion and independence for older adults, enabling them to confidently engage with the digital world.
 
