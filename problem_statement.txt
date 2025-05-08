@@ -1,0 +1,15 @@
+Build a website that provides senior citizens with a one-stop for the 
+services they can avail on the Internet (Jeevan Pramaan 
+Registration, medicine reminder, tutorials on Internet services –
+social media, senior citizen services, YouTube, etc.)
+Senior citizens sometimes find making use of the Internet difficult. 
+Your app should be something which is simple to use and intuitive, 
+and at the same time, provide a senior citizen with features like –
+send notifications when important events by the government related 
+to senior citizens are coming up (example: deadline for applying for 
+Jeevan pramaan), redirect senior citizen to the appropriate site to get 
+government service, teach the senior citizens some of the capabilities 
+of the Internet – social media, videos, etc. through tutorials, help the 
+senior citizen (or guardian) configure notifications on the app which 
+will remind the time to take a medicine, or an upcoming general 
+appointment, etc.
