@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – AgeWise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header (static at top) -->
+  <header class="bg-white border-b">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-4xl font-extrabold text-blue-600">AgeWise</a>
+      <nav class="hidden md:flex space-x-6" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="wellness.html">Wellness</a>
+        <a href="community.html">Community</a>
+        <a href="login.html" id="nav-login" class="font-semibold text-blue-600">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main: only this part is centered -->
+  <main class="flex items-center justify-center" style="height: calc(100vh - 64px);">
+    <div class="bg-white p-8 rounded shadow-md text-center w-full max-w-sm">
+      <h1 class="text-2xl font-bold mb-6">Welcome to AgeWise</h1>
+      <button id="google-signin"
+              class="bg-red-500 text-white px-6 py-3 rounded hover:bg-red-600">
+        Sign in with Google
+      </button>
+    </div>
+  </main>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBKDS9rZf1_vEWEgXHV8lnEwvYgS_RXm6o",
+      authDomain: "agewise-c71f3.firebaseapp.com",
+      projectId: "agewise-c71f3",
+      storageBucket: "agewise-c71f3.appspot.com",
+      messagingSenderId: "243707359011",
+      appId: "1:243707359011:web:f60b9cf7713b6765692696",
+      measurementId: "G‑GZYG2C7L3Y"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    provider.addScope('https://www.googleapis.com/auth/calendar.events');
+
+    // If already signed in, go straight to home
+    onAuthStateChanged(auth, user => {
+      if (user) window.location.replace('index.html');
+    });
+
+    document.getElementById('google-signin').onclick = async () => {
+      try {
+        const result = await signInWithPopup(auth, provider);
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const accessToken = credential.accessToken;
+        localStorage.setItem('googleAccessToken', accessToken);
+        window.location.replace('index.html');
+      } catch (err) {
+        alert('Login failed: ' + err.message);
+      }
+    };
+  </script>
+</body>
+</html>
