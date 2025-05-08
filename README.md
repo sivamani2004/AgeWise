@@ -210,4 +210,4 @@ This repository includes:
 
 ## Contact
 
-Have questions, feedback, or want to collaborate? Contact the Project Lead at se22uari137@mahindrauniversity.edu.in
+Have questions, feedback, or want to collaborate? Contact us at se22uari119@mahindrauniversity.edu.in
