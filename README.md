@@ -1,4 +1,5 @@
 # AgeWise
+Software Engineering Course Team Project. AgeWise Webapp to help seniors stay connected online.
 
 LINK FOR DEMO VIDEO : "https://youtu.be/gEtYHSk9ATQ?si=QpfMBhpWGXx0LCre"
 
