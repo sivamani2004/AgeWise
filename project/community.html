@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgeWise Connect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-image: url('./assets/image.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* This makes it scroll continuously */
+    }
+  </style>
+</head>
+<body class="antialiased" data-auth="pending">
+
+  <!-- Header -->
+  <header class="bg-white border-b">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="flex items-center space-x-4">
+        <a href="index.html" class="text-4xl font-extrabold text-blue-600">AgeWise</a>
+        <div id="translate-wrapper">
+          <div id="translate-btn" title="Translate">
+            <img src="https://cdn-icons-png.flaticon.com/512/4534/4534766.png" alt="Translate" style="width: 28px; height: 28px;" />
+          </div>
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+      <nav class="hidden md:flex space-x-6" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="wellness.html">Wellness</a>
+        <a href="community.html" id="nav-home" class="font-semibold text-blue-600">Community</a>
+        <a href="login.html" id="nav-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-8">
+    <h1 class="text-4xl font-bold mb-4">Community Support</h1>
+    <h2 class="text-xl mb-8">Get emotional care and support on call or chat with our empathetic Emotional Supporters.</h2>
+
+
+
+    <!-- Available Supporters -->
+    <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+      <h2 class="text-2xl font-bold mb-6">Available Emotional Supporters</h2>
+      <div id="supporters-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+        <!-- Toggle Button for Enrollment Form -->
+        <button id="show-enrollment-btn" 
+        class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mb-4">
+  ➕ Become an Emotional Supporter
+   </button>
+
+    <!-- Enrollment Form (hidden by default) -->
+    <div id="enrollment-section" class="bg-white p-6 rounded-lg shadow-md hidden">
+      <h2 class="text-2xl font-bold mb-4">Become an Emotional Supporter</h2>
+      <form id="supporter-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block mb-2">Full Name</label>
+          <input type="text" id="supporter-name" required class="w-full p-2 border rounded">
+        </div>
+        <div>
+          <label class="block mb-2">Age</label>
+          <input type="number" id="supporter-age" required min="0" max="100" class="w-full p-2 border rounded">
+        </div>
+        <div>
+          <label class="block mb-2">Contact Number</label>
+          <input type="tel" id="supporter-phone" required class="w-full p-2 border rounded">
+        </div>
+        <div>
+          <label class="block mb-2">Preferred Language</label>
+          <select id="supporter-language" class="w-full p-2 border rounded">
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="telugu">Telugu</option>
+            <option value="tamil">Tamil</option>
+            <option value="kannada">Kannada</option>
+            <option value="malayalam">Malayalam</option>
+            <option value="marathi">Marathi</option>
+            <option value="bengali">Bengali</option>
+            <option value="gujarati">Gujarati</option>
+            <option value="punjabi">Punjabi</option>
+            <option value="urdu">Urdu</option>
+          </select>
+        </div>
+        <div class="md:col-span-2">
+          <label class="block mb-2">Availability</label>
+          <div class="flex gap-4">
+            <label class="flex items-center">
+              <input type="checkbox" name="days" value="weekdays"> Weekdays
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" name="days" value="weekends"> Weekends
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" name="days" value="evenings"> Evenings
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="md:col-span-2 bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600">
+          Register as Supporter
+        </button>
+      </form>
+    </div>
+  </main>
+
+  
+
+  <!-- Floating Voice Button -->
+  <button id="voice-btn"
+          class="fancy-hover fixed bottom-6 right-6 bg-green-500 text-white text-3xl w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 focus:outline-none z-50"
+          title="Activate Voice Assistant">
+    🎤
+  </button>
+  <p id="voice-result"
+     class="fixed bottom-24 right-6 bg-white text-gray-700 text-sm p-2 rounded shadow z-40 hidden"></p>
+
+  <!-- Floating Chatbot Toggle Button -->
+  <button id="chat-toggle"
+          class="fancy-hover fixed bottom-6 right-24 bg-blue-600 text-white text-2xl w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 focus:outline-none transition z-50">
+    💬
+  </button>
+
+  <div id="chat-widget"
+       class="fixed bottom-6 left-6 mt-2 w-80 bg-white shadow-xl rounded-lg overflow-hidden text-sm transition-all duration-300 transform scale-0 opacity-0 origin-bottom-left z-50">
+    <div class="bg-blue-600 text-white p-3 font-bold">💬 AgeWise Assistant</div>
+    <div id="chat-messages" class="p-3 h-60 overflow-y-auto text-gray-700 bg-gray-50"></div>
+    <form id="chat-form" class="flex border-t">
+      <input type="text" id="chat-input" placeholder="Ask me anything..." class="flex-grow p-2 outline-none" />
+      <button type="submit" class="bg-blue-600 text-white px-4">Send</button>
+    </form>
+  </div>
+
+  <!-- Zoom Button -->
+  <button id="zoom-toggle" class="fancy-hover fixed bottom-6 right-[170px] text-3xl w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center shadow-md">
+    🔍
+  </button>
+
+  <div id="zoom-popup" class="fixed bottom-20 right-[170px] bg-gray-50 rounded-xl shadow-lg p-3 hidden flex gap-3 items-center">
+    <button id="zoom-out" class="fancy-hover text-2xl px-3 py-1 bg-gray-200 rounded-full">−</button>
+    <button id="zoom-in" class="fancy-hover text-2xl px-3 py-1 bg-gray-200 rounded-full">+</button>
+  </div>
+
+  <!-- Firebase Auth Setup & Nav Behavior -->
+  <script type="module" src="auth.js"></script>
+  <script type="module" src="gemini.js"></script>
+  <script src="zoom.js"></script>
+  <script type="module" src="community.js"></script>
+  <script src="translate.js"></script>
+
+
+</body>
+</html>

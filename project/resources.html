@@ -1,0 +1,218 @@
+<!-- resources.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resources - AgeWise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-image: url('./assets/image.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* This makes it scroll continuously */
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50" data-auth="pending">
+  <!-- Header with dynamic nav -->
+  <header class="bg-white border-b">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <!-- Left section: Logo + Translate -->
+      <div class="flex items-center space-x-4">
+        <a href="index.html" class="text-4xl font-extrabold text-blue-600">AgeWise</a>
+        <div id="translate-wrapper">
+          <div id="translate-btn" title="Translate">
+            <img src="https://cdn-icons-png.flaticon.com/512/4534/4534766.png" alt="Translate" style="width: 28px; height: 28px;" />
+          </div>
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+      <!-- Right section: Navigation + Login -->
+      <nav class="hidden md:flex space-x-6" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="resources.html" class="font-semibold text-blue-600">Resources</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="wellness.html">Wellness</a>
+        <a href="community.html">Community</a>
+        <a href="login.html" id="nav-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-8">
+    <div>
+      <h1 class="text-4xl font-bold mb-2">Helpful Resources for Seniors</h1>
+      <p class="text-gray-600 max-w-xl">
+        Explore official websites, healthcare portals, guides, and tools to support your health, government services, safety, and digital journey.
+      </p>
+    </div>
+    
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <!-- Government Forms -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">📑 Government Forms & IDs</h2>
+      <ul class="space-y-2 text-blue-700">
+        <li><a href="https://jeevanpramaan.gov.in/" target="_blank">Jeevan Pramaan – Digital Life Certificate</a></li>
+        <li><a href="https://www.india.gov.in/" target="_blank">India.gov.in – National Portal of India</a></li>
+        <li><a href="https://voters.eci.gov.in/" target="_blank">National Voter Portal</a></li>
+        <li><a href="https://passportindia.gov.in/" target="_blank">Passport Seva</a></li>
+      </ul>
+    </div>
+
+    <!-- Regional Services -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">🌍 Regional Services</h2>
+      <ul class="space-y-2 text-blue-700">
+        <li><a href="https://ssp.postmatric.karnataka.gov.in/" target="_blank">Karnataka Pension</a></li>
+        <li><a href="https://sje.rajasthan.gov.in/" target="_blank">Rajasthan Social Schemes</a></li>
+        <li><a href="https://swanirbhartripura.in/" target="_blank">Tripura Swanirbhar</a></li>
+        <li><a href="https://ap.meeseva.gov.in/" target="_blank">AP MeeSeva</a></li>
+      </ul>
+    </div>
+
+    <!-- Medical & Insurance -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">🧑‍⚕️ Medical & Insurance</h2>
+      <ul class="space-y-2 text-blue-700">
+        <li><a href="https://esanjeevani.mohfw.gov.in/" target="_blank">eSanjeevani Telemedicine</a></li>
+        <li><a href="https://www.pmjay.gov.in/" target="_blank">Ayushman Bharat Insurance</a></li>
+        <li><a href="https://cghealth.nic.in/ehealth/" target="_blank">CG Health Portal</a></li>
+        <li><a href="https://nha.gov.in/" target="_blank">National Health Authority</a></li>
+      </ul>
+    </div>
+
+    <!-- COVID-19 Resources -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">🦠 COVID-19 Resources</h2>
+      <ul class="space-y-2 text-blue-700">
+        <li><a href="https://www.cowin.gov.in/" target="_blank">CoWIN – Vaccination</a></li>
+        <li><a href="https://www.mohfw.gov.in/" target="_blank">MoHFW Updates</a></li>
+        <li><a href="https://www.mohfw.gov.in/pdf/PostCOVIDCareGuidelines.pdf" target="_blank">Post-COVID Guidelines</a></li>
+        <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank">WHO COVID-19 Info</a></li>
+      </ul>
+    </div>
+
+    <!-- NGOs & Helplines -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">🤝 NGOs & Helplines</h2>
+      <ul class="space-y-2 text-blue-700">
+        <li><a href="https://www.helpageindia.org/" target="_blank">HelpAge India</a></li>
+        <li><a href="https://nphce.nhp.gov.in/" target="_blank">NPHCE Elderly Care</a></li>
+        <li>Senior Helpline 📞 14567</li>
+        <li>Women’s Helpline 📞 1091</li>
+      </ul>
+    </div>
+
+    <!-- WhatsApp Help -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">💬 WhatsApp Help</h2>
+      <p class="mb-2">Need help? Chat with our team on WhatsApp.</p>
+      <a href="https://wa.me/919573530737" target="_blank" class="text-green-600 underline">Start WhatsApp Chat</a>
+    </div>
+
+    <!-- Entertainment & Wellness -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">🎶 Entertainment & Wellness</h2>
+      <ul class="space-y-2 text-blue-700">
+        <li><a href="https://seniorplanet.org/" target="_blank">Senior Planet – Online Learning</a></li>
+        <li><a href="https://www.spotify.com/" target="_blank">Spotify – Music & Podcasts</a></li>
+        <li><a href="https://www.meditationoasis.com/" target="_blank">Meditation Oasis</a></li>
+      </ul>
+    </div>
+
+    <!-- Finance & Banking -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">💳 Finance & Banking</h2>
+      <ul class="space-y-2 text-blue-700">
+        <li><a href="https://www.rbi.org.in/" target="_blank">RBI – Safe Banking</a></li>
+        <li><a href="https://www.pfrda.org.in/" target="_blank">Pension Fund Regulatory</a></li>
+        <li><a href="https://npscra.nsdl.co.in/" target="_blank">National Pension System</a></li>
+        <li><a href="https://www.incometax.gov.in/" target="_blank">Income Tax Portal</a></li>
+      </ul>
+    </div>
+
+    <!-- Safety & Security -->
+    <div class="bg-white shadow rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">🔐 Safety & Security</h2>
+      <ul class="space-y-2 text-blue-700">
+        <li><a href="https://cybercrime.gov.in/" target="_blank">Report Cybercrime</a></li>
+        <li><a href="https://digitallocker.gov.in/" target="_blank">DigiLocker</a></li>
+        <li><a href="https://safecity.in/" target="_blank">SafeCity – Report Incidents</a></li>
+      </ul>
+    </div>
+
+
+  </main>
+
+
+
+
+  <!-- Floating Voice Button -->
+  <button id="voice-btn" 
+        class="fancy-hover fixed bottom-6 right-6 bg-green-500 text-white text-3xl w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 focus:outline-none z-50"
+        title="Activate Voice Assistant">
+        🎤
+  </button>
+  <!-- Voice Result Message (Optional) -->
+  <p id="voice-result" class="fixed bottom-24 right-6 bg-white text-gray-700 text-sm p-2 rounded shadow z-40 hidden"></p>
+
+
+
+  
+
+
+  <!-- Floating Chatbot -->
+  <div class="fixed bottom-6 left-6 z-50 flex flex-col items-start space-y-2">
+    <!-- Button -->
+    <button id="chat-toggle" class="fancy-hover fixed bottom-6 right-24 bg-blue-600 text-white text-2xl w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 focus:outline-none transition z-50">
+      💬
+    </button>
+
+    <!-- Chat Widget (initially collapsed) -->
+    <div id="chat-widget"   class="mt-2 w-80 bg-white shadow-xl rounded-lg overflow-hidden text-sm transition-all duration-300 transform scale-0 opacity-0 origin-bottom-left">
+      <div class="bg-blue-600 text-white p-3 font-bold">💬 AgeWise Assistant</div>
+      <div id="chat-messages" class="p-3 h-60 overflow-y-auto text-left space-y-2 text-gray-700 bg-gray-50"></div>
+      <form id="chat-form" class="flex border-t">
+        <input type="text" id="chat-input" placeholder="Ask me anything..." class="flex-grow p-2 outline-none" />
+        <button type="submit" class="bg-blue-600 text-white px-4">Send</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Zoom Button -->
+  <button id="zoom-toggle" class="fancy-hover fixed bottom-6 right-[170px] text-3xl w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center shadow-md">
+    🔍
+  </button>
+  <!-- Zoom Popup -->
+  <div id="zoom-popup" class="fixed bottom-20 right-[170px] bg-gray-50 rounded-xl shadow-lg p-3 hidden flex gap-3 items-center">
+    <button id="zoom-out" class="fancy-hover text-2xl px-3 py-1 bg-gray-200 rounded-full">−</button>
+    <button id="zoom-in" class="fancy-hover text-2xl px-3 py-1 bg-gray-200 rounded-full">+</button>
+  </div>
+
+
+
+
+
+
+
+  <!-- 1️⃣ Firebase Auth Setup & Nav Behavior -->
+  <script type="module" src="auth.js"></script>
+  <!-- Gemini LLM Chatbot Logic -->
+  <script type="module" src="gemini.js"></script>
+  <!-- Zoom functionality load -->
+  <script src="zoom.js"></script>
+  <script src="translate.js"></script>
+</body>
+</html>

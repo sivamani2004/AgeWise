@@ -1,0 +1,65 @@
+/* Existing styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+/* 👇 NEW: Hide nav until auth state is confirmed */
+body[data-auth="pending"] #main-nav {
+  visibility: hidden;
+}
+
+
+#translate-wrapper {
+  position: relative;
+}
+
+#google_translate_element {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 999;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#translate-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#translate-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.fancy-hover {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fancy-hover:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Add this to your styles.css or inside a <style> tag */
+#chat-widget-wrapper {
+  min-width: 200px;
+  min-height: 200px;
+}
+
+
+
+

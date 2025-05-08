@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tutorials - AgeWise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    body {
+      background-image: url('./assets/image.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* This makes it scroll continuously */
+    }
+  </style>
+</head>
+<body class="bg-gray-50" data-auth="pending">
+  <!-- Header with dynamic nav -->
+  <header class="bg-white border-b">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <!-- Left section: Logo + Translate -->
+      <div class="flex items-center space-x-4">
+        <a href="index.html" class="text-4xl font-extrabold text-blue-600">AgeWise</a>
+        <div id="translate-wrapper">
+          <div id="translate-btn" title="Translate">
+            <img src="https://cdn-icons-png.flaticon.com/512/4534/4534766.png" alt="Translate" style="width: 28px; height: 28px;" />
+          </div>
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+      <!-- Right section: Navigation + Login -->
+      <nav class="hidden md:flex space-x-6" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tutorials.html" class="font-semibold text-blue-600">Tutorials</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="wellness.html">Wellness</a>
+        <a href="community.html">Community</a>
+        <a href="login.html" id="nav-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-8">
+    <h1 class="text-4xl font-bold mb-4">Step-by-Step Tutorials</h1>
+    <p class="text-gray-600 mb-8">Learn how to use everyday apps and services with video guides tailored for seniors.</p>
+
+
+    <!-- search bar and voice input  -->
+    <div class="mb-8 flex flex-col md:flex-row gap-4">
+      <input type="text" id="youtube-search-input" placeholder="Search for a tutorial..." 
+             class="flex-grow p-3 border border-gray-300 rounded-lg">
+      <button id="youtube-search-button" class="bg-blue-600 text-white px-6 py-3 rounded-lg">
+        Search
+      </button>
+      <!-- Add voice search button -->
+      <button onclick="recordVoiceForSearch()" 
+              class="bg-green-500 text-white px-4 py-3 rounded-lg hover:bg-green-600">
+        🎤
+      </button>
+    </div>
+    <!-- Add status message -->
+    <p id="voice-search-status" class="text-sm text-gray-500 italic hidden"></p>
+
+    <div id="youtube-results-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    </div>
+
+
+    <div id="default-tutorials" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">  
+        <!-- Email Tutorial -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <iframe class="w-full h-64" src="https://www.youtube.com/embed/CtRgwJaW2N4" title="How to Use Email" frameborder="0" allowfullscreen></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-semibold">How to Use Email</h2>
+            <p class="text-sm text-gray-600">Learn how to send, receive, and reply to emails simply.</p>
+          </div>
+        </div>
+
+        <!-- Video Calls -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <iframe class="w-full h-64" src="https://www.youtube.com/embed/QkvlYq9TazU" title="Making Video Calls" frameborder="0" allowfullscreen></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-semibold">Making Video Calls</h2>
+            <p class="text-sm text-gray-600">Learn video calling using WhatsApp, Zoom, and Google Meet.</p>
+          </div>
+        </div>
+
+        <!-- Safe Browsing -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <iframe class="w-full h-64" src="https://www.youtube.com/embed/yrln8nyVBLU" title="Safe Browsing" frameborder="0" allowfullscreen></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-semibold">Safe Browsing</h2>
+            <p class="text-sm text-gray-600">Protect your privacy and stay safe while browsing online.</p>
+          </div>
+        </div>
+
+        <!-- Setting up Gpay-->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <iframe class="w-full h-64" src="https://www.youtube.com/embed/-Ougj4el-2g?si=M9fUU4ALxJtoZIm7" title="Making Online Payments" frameborder="0" allowfullscreen></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-semibold">How to setup Gpay and UPI.</h2>
+            <p class="text-sm text-gray-600">Learn to use setup Google Pay and use UPI for seamless payments.</p>
+          </div>
+        </div>
+
+        <!-- Online Payments -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <iframe class="w-full h-64" src="https://www.youtube.com/embed/BmWL6Dl4rjw" title="Making Online Payments" frameborder="0" allowfullscreen></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-semibold">Making Online Payments Securely</h2>
+            <p class="text-sm text-gray-600">Learn to use PayTM, Google Pay, and online banking securely.</p>
+          </div>
+        </div>
+
+        <!-- Stay safe from scams -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <iframe class="w-full h-64" src="https://www.youtube.com/embed/JGwYoKtuwiQ?si=LUtkIo34JshgXnXG" title="Making Online Payments" frameborder="0" allowfullscreen></iframe>
+          <div class="p-4">
+            <h2 class="text-lg font-semibold">How to stay safe from scams.</h2>
+            <p class="text-sm text-gray-600">Learn how to stay protected from online banking scams and scamsters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to View More -->
+    <div class="text-center mt-10">
+      <br><br>
+      <a href="resources.html" class="bg-blue-500 text-white text-base font-bold px-4 py-3 rounded-lg hover:bg-blue-600">Explore Resources</a>
+      <a href="reminders.html" class="bg-blue-500 text-white text-base font-bold px-4 py-3 rounded-lg hover:bg-blue-600">Set Medicine Reminders</a>
+      <a href="wellness.html" class="bg-blue-500 text-white text-base font-bold px-4 py-3 rounded-lg hover:bg-blue-600">Explore Wellness</a>
+      <a href="community.html" class="bg-blue-500 text-white text-base font-bold px-4 py-3 rounded-lg hover:bg-blue-600">Get Emotional Support</a>
+      <br><br>
+    </div>
+  </main>
+
+
+
+  
+
+
+
+  <!-- Floating Voice Button -->
+  <button id="voice-btn" 
+        class="fancy-hover fixed bottom-6 right-6 bg-green-500 text-white text-3xl w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 focus:outline-none z-50"
+        title="Activate Voice Assistant">
+        🎤
+  </button>
+  <!-- Voice Result Message (Optional) -->
+  <p id="voice-result" class="fixed bottom-24 right-6 bg-white text-gray-700 text-sm p-2 rounded shadow z-40 hidden"></p>
+
+
+
+  
+
+  <!-- Floating Chatbot -->
+  <div class="fixed bottom-6 left-6 z-50 flex flex-col items-start space-y-2">
+    <!-- Button -->
+    <button id="chat-toggle" class="fancy-hover fixed bottom-6 right-24 bg-blue-600 text-white text-2xl w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 focus:outline-none transition z-50">
+      💬
+    </button>
+
+    <!-- Chat Widget (initially collapsed) -->
+    <div id="chat-widget"   class="mt-2 w-80 bg-white shadow-xl rounded-lg overflow-hidden text-sm transition-all duration-300 transform scale-0 opacity-0 origin-bottom-left">
+      <div class="bg-blue-600 text-white p-3 font-bold">💬 AgeWise Assistant</div>
+      <div id="chat-messages" class="p-3 h-60 overflow-y-auto text-left space-y-2 text-gray-700 bg-gray-50"></div>
+      <form id="chat-form" class="flex border-t">
+        <input type="text" id="chat-input" placeholder="Ask me anything..." class="flex-grow p-2 outline-none" />
+        <button type="submit" class="bg-blue-600 text-white px-4">Send</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <!-- Zoom Button -->
+  <button id="zoom-toggle" class="fancy-hover fixed bottom-6 right-[170px] text-3xl w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center shadow-md">
+    🔍
+  </button>
+  <!-- Zoom Popup -->
+  <div id="zoom-popup" class="fixed bottom-20 right-[170px] bg-gray-50 rounded-xl shadow-lg p-3 hidden flex gap-3 items-center">
+    <button id="zoom-out" class="fancy-hover text-2xl px-3 py-1 bg-gray-200 rounded-full">−</button>
+    <button id="zoom-in" class="fancy-hover text-2xl px-3 py-1 bg-gray-200 rounded-full">+</button>
+  </div>
+
+
+
+
+
+
+  <!--  Firebase Auth Setup & Nav Behavior -->
+  <script type="module" src="auth.js"></script>
+  <!-- Gemini LLM Chatbot Logic -->
+  <script type="module" src="gemini.js"></script>
+  <!-- Zoom Functionality -->
+  <script src="zoom.js"></script>
+  <!-- Search Youtube -->
+  <script src="tutorials.js"></script>
+  <script src="translate.js"></script>
+</body>
+</html>
