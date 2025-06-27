@@ -1,4 +1,7 @@
-hi
+## Contributors and Owners-
+
+Sivamani- https://github.com/sivamani2004
+P.Chetan Naidu- https://github.com/chetannaidu2005
 
 # AgeWise
 Software Engineering Course Team Project. AgeWise Webapp to help seniors stay connected online.
