@@ -1,7 +1,14 @@
-## Contributors and Owners-
+## Contributors and Owners
 
-Sivamani- https://github.com/sivamani2004
-P.Chetan Naidu- https://github.com/chetannaidu2005
+The AgeWise project was developed as a collaborative effort by students enrolled in the Software Engineering course. The main contributors are:
+
+- **Sivamani**  
+  GitHub: [https://github.com/sivamani2004](https://github.com/sivamani2004)
+
+- **P. Chetan Naidu**  
+  GitHub: [https://github.com/chetannaidu2005](https://github.com/chetannaidu2005)
+
+These contributors played a key role in building the AgeWise platform, which aims to bridge the digital divide and support elderly users in accessing online services.
 
 # AgeWise
 Software Engineering Course Team Project. AgeWise Webapp to help seniors stay connected online.
