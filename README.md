@@ -8,6 +8,9 @@ The AgeWise project was developed as a collaborative effort by students enrolled
 - **P. Chetan Naidu**  
   GitHub: [https://github.com/chetannaidu2005](https://github.com/chetannaidu2005)
 
+- **Rahul Kaja**  
+  GitHub: [https://github.com/rahulkaja](https://github.com/rahulkaja)
+
 These contributors played a key role in building the AgeWise platform, which aims to bridge the digital divide and support elderly users in accessing online services.
 
 # AgeWise
